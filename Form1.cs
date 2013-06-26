@@ -91,90 +91,95 @@ namespace ConcreteSuite
             //the materials section
 
 
-            if (TextControls.Validate(Convert.ToString(textBox1.Text)))
+            if (TextControls.Validate(Convert.ToString(textBox1.Text)) 
+                && TextControls.Validate(Convert.ToString(textBox2.Text))
+                && TextControls.Validate(Convert.ToString(textBox3.Text))
+                && TextControls.Validate(Convert.ToString(comboBox2.Text))
+                )
             {
+
                 MessageBox.Show("Valid");
+                float length = float.Parse(textBox1.Text);
+                float width = float.Parse(textBox2.Text);
+                float thick = float.Parse(textBox3.Text);
+                float cubicYardage = Calculations.SlabYardage(length, width, thick);
+
+                if (checkBox1.Checked)
+                {
+                    double spillage =
+                        Calculations.Spillage(int.Parse(comboBox2.Text));
+                    double cubicYardagePlusSpillage =
+                        (cubicYardage * spillage) + cubicYardage;
+                    textBox7.Text = Convert.ToString(cubicYardagePlusSpillage);
+                }
+                else
+                {
+                    textBox7.Text = Convert.ToString(cubicYardage);
+                }
+
+                //Calculate square feet
+                textBox9.Text = Convert.ToString(Calculations.SlabSquareFeet(length, width)); 
+            
             }
             else
             {
-                MessageBox.Show("Invalid");
+                MessageBox.Show("Textboxes must have number values.\n"
+                    + "No letters or special characters are permitted.",
+                    "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
    
-
-
-
-            float length = float.Parse(textBox1.Text);
-            float width = float.Parse(textBox2.Text);
-            float thick = float.Parse(textBox3.Text);
-            float cubicYardage = Calculations.SlabYardage(length, width, thick);
-
-
-            //add checkbox2 which activates spillage calculation
-            //spillage value will be in combobox and will be prepended
-            //with a decimal, then used in calculation below
-            //write a method so u can use it in circle calculation
-            if (checkBox1.Checked)
-            {
-                double spillage = 
-                    Calculations.Spillage(int.Parse(comboBox2.Text));
-                double cubicYardagePlusSpillage =
-                    (cubicYardage * spillage) + cubicYardage;
-                //*Diagnostic_textBox10.Text = 
-                //    Convert.ToString(cubicYardagePlusSpillage);
-
-                textBox7.Text = Convert.ToString(cubicYardagePlusSpillage);
-            }
-            else
-            {
-                textBox7.Text = Convert.ToString(cubicYardage);
-            }
-            
-
-            //Calculate square feet
-            textBox9.Text = Convert.ToString(Calculations.SlabSquareFeet(length, width)); 
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            float radius = float.Parse(textBox4.Text);
-            float thick = float.Parse(textBox5.Text);
-            double cubicYardage = Calculations.CircularYardage(radius, thick);
 
-            //textBox6.Text = Convert.ToString(cubicYardage);
-
-            if (checkBox2.Checked)
+            if (TextControls.Validate(Convert.ToString(textBox4.Text))
+                && TextControls.Validate(Convert.ToString(textBox5.Text))
+                && TextControls.Validate(Convert.ToString(comboBox3.Text))
+                )
             {
-                double spillage =
-                    Calculations.Spillage(int.Parse(comboBox3.Text));
-                double cubicYardagePlusSpillage =
-                    (cubicYardage * spillage) + cubicYardage;
-                //*Diagnostic_textBox10.Text = 
-                //    Convert.ToString(cubicYardagePlusSpillage);
-                textBox10.Text = Convert.ToString(cubicYardage);
-                textBox6.Text = Convert.ToString(cubicYardagePlusSpillage);
+
+                float radius = float.Parse(textBox4.Text);
+                float thick = float.Parse(textBox5.Text);
+                double cubicYardage = Calculations.CircularYardage(radius, thick);
+
+                if (checkBox2.Checked)
+                {
+                    double spillage =
+                        Calculations.Spillage(int.Parse(comboBox3.Text));
+                    double cubicYardagePlusSpillage =
+                        (cubicYardage * spillage) + cubicYardage;
+                    textBox6.Text = Convert.ToString(cubicYardagePlusSpillage);
+                }
+                else
+                {
+                    textBox6.Text = Convert.ToString(cubicYardage);
+                }
+
+                //calculate circular square feet
+                textBox8.Text = Convert.ToString(Calculations.CircleArea(radius));
+
             }
-            else
-            {
-                textBox6.Text = Convert.ToString(cubicYardage);
+            else {
+                MessageBox.Show("Textboxes must have number values.\n"
+                    + "No letters or special characters are permitted.",
+                    "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-
-
-
-            double circularSquarefeet = Calculations.CircleArea(radius);
-
-            textBox8.Text = Convert.ToString(circularSquarefeet);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             ClearText(groupBox1);
-        }//end method
+        }
 
-        
-        //input validation
-        
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ClearText(groupBox2);
+        }
+
+   
 
     }
 }

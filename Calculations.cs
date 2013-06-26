@@ -28,7 +28,6 @@ namespace ConcreteSuite
 
 
         //calculate Square feet in a circlular slab
-
         public static double CircleArea(double radius)
         {
             double circularSquarefeet = (radius * radius) * Math.PI ;
@@ -43,14 +42,14 @@ namespace ConcreteSuite
             return cubicYardage;
         }
 
-        //prepend period to comboBox2 amount
+        
         public static double Spillage(int amount)
         {
 
             double percentageSpill = amount * .01;
             return percentageSpill;
 
-            /* <deleted>
+            /* //prepend period to comboBox2 amount
             //string amountDecimal = Convert.ToString(amount);
 
             ////add If statement because if amount 1-9... add 0 before it
@@ -81,7 +80,7 @@ namespace ConcreteSuite
             //    amountDecimalStr = amountDecimalStr.Insert(0, ".");
             //    float percentageSpill = Convert.ToSingle(amountDecimalStr);
             //    return percentageSpill;
-            //} </deleted> */
+            //} */
         }
 
 
