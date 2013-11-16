@@ -11,7 +11,7 @@ namespace ConcreteSuite
 {
     public partial class Form1 : Form
     {
-
+        // TODO: Create checkbox that sends Slab yardage to yardage listbox
         public void ClearText(Control control)
         {
             /*
@@ -52,12 +52,15 @@ namespace ConcreteSuite
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            /*
             groupBox1.Visible = false;
             groupBox2.Visible = false;
+            */
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            /*
             if (comboBox1.Text == "Slab")
             {
                 groupBox1.Visible = true;
@@ -67,7 +70,9 @@ namespace ConcreteSuite
             {
                 groupBox1.Visible = false;
                 groupBox2.Visible = true;
+
             }
+            */
         }
 
 
@@ -97,8 +102,10 @@ namespace ConcreteSuite
                 && TextControls.Validate(Convert.ToString(comboBox2.Text))
                 )
             {
-
+                /* diagnostic
                 MessageBox.Show("Valid");
+                 */
+
                 float length = float.Parse(textBox1.Text);
                 float width = float.Parse(textBox2.Text);
                 float thick = float.Parse(textBox3.Text);
@@ -118,7 +125,12 @@ namespace ConcreteSuite
                 }
 
                 //Calculate square feet
-                textBox9.Text = Convert.ToString(Calculations.SlabSquareFeet(length, width)); 
+                textBox9.Text = Convert.ToString(Calculations.SlabSquareFeet(length, width));
+
+                if (checkBox3.Checked)
+                {
+                    listBox1.Items.Add(Convert.ToString(Calculations.SlabSquareFeet(length, width)));
+                }
             
             }
             else
@@ -144,13 +156,16 @@ namespace ConcreteSuite
                 float thick = float.Parse(textBox5.Text);
                 double cubicYardage = Calculations.CircularYardage(radius, thick);
 
+                double cubicYardagePlusSpillage = 0;
+
                 if (checkBox2.Checked)
                 {
                     double spillage =
                         Calculations.Spillage(int.Parse(comboBox3.Text));
-                    double cubicYardagePlusSpillage =
+                    cubicYardagePlusSpillage =
                         (cubicYardage * spillage) + cubicYardage;
                     textBox6.Text = Convert.ToString(cubicYardagePlusSpillage);
+
                 }
                 else
                 {
@@ -159,6 +174,23 @@ namespace ConcreteSuite
 
                 //calculate circular square feet
                 textBox8.Text = Convert.ToString(Calculations.CircleArea(radius));
+
+                //Send Square feet results to Squarefeet listbox
+                if (checkBox5.Checked)
+                {
+                    listBox1.Items.Add(Convert.ToString(Calculations.CircleArea(radius)));
+                }
+
+                //Send Yardage results to Yardage listbox
+                if ((checkBox6.Checked)
+                    && checkBox2.Checked)
+                {
+                    listBox2.Items.Add(Convert.ToString(cubicYardagePlusSpillage));
+                }
+                else if (checkBox6.Checked)
+                {
+                    listBox2.Items.Add(Convert.ToString(cubicYardage));
+                }
 
             }
             else {
@@ -179,7 +211,93 @@ namespace ConcreteSuite
             ClearText(groupBox2);
         }
 
-   
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (TextControls.Validate(Convert.ToString(textBox10.Text))
+                && TextControls.Validate(Convert.ToString(textBox12.Text))
+               ) 
+            {
+                float selectedSquareFeet = float.Parse(Convert.ToString(textBox10.Text));
+                
+                //rebar
+                float rebarCenter = float.Parse(Convert.ToString(textBox12.Text));
+                float linearRebarFeet = Calculations.rebarNeeded(selectedSquareFeet, rebarCenter);
+                textBox11.Text = Convert.ToString(linearRebarFeet);
+
+            }
+            else
+            {
+                MessageBox.Show("Textboxes must have number values.\n"
+                    + "No letters or special characters are permitted.",
+                    "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ClearText(groupBox3);
+        }
+
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox4.Checked == true)
+            {
+                int squareFeet = 0;
+                foreach (string item in this.listBox1.SelectedItems)
+                {
+
+                    squareFeet += (Convert.ToInt32(item));
+                }
+
+                textBox10.Text = Convert.ToString(squareFeet);
+
+            }
+            else if (checkBox4.Checked == false)
+            {
+                textBox10.Text = "";
+            }
+        
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (TextControls.Validate(Convert.ToString(textBox13.Text)))
+            {
+                float selectedSquareFeet = float.Parse(Convert.ToString(textBox10.Text));
+
+                //stands
+                float standCenter = float.Parse(Convert.ToString(textBox13.Text));
+                float standsTotal = Calculations.standsNeeded(selectedSquareFeet, standCenter);
+                textBox14.Text = (Convert.ToString(standsTotal));
+
+            }
+            else
+            {
+                MessageBox.Show("Textboxes must have number values.\n"
+                    + "No letters or special characters are permitted.",
+                    "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int yardage = 0;
+
+            if (listBox2.SelectedItems.Count > 0)
+            {
+                foreach (string y in this.listBox2.SelectedItems)
+                {
+                    yardage += (Convert.ToInt32(y));
+                }
+
+                textBox15.Text = Convert.ToString(yardage);
+            }
+
+        }
+
+
 
     }
 }
+
