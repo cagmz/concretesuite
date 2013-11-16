@@ -30,8 +30,8 @@ namespace ConcreteSuite
         //calculate Square feet in a circlular slab
         public static double CircleArea(double radius)
         {
-            double circularSquarefeet = (radius * radius) * Math.PI ;
-            return circularSquarefeet;
+            double CircularSquarefeet = Math.Round((radius * radius) * Math.PI) ;
+            return CircularSquarefeet;
         }
 
         //this "Functional Method" calculates the Cubic Circle Slab Yardage
@@ -48,42 +48,24 @@ namespace ConcreteSuite
 
             double percentageSpill = amount * .01;
             return percentageSpill;
-
-            /* //prepend period to comboBox2 amount
-            //string amountDecimal = Convert.ToString(amount);
-
-            ////add If statement because if amount 1-9... add 0 before it
-            //if (amountDecimal = "1" || "2" || "3" || "4" || "5" || "7" || "8" || "9")
-            //{
-            //    amountDecimal = amountDecimal.Insert(0, ".0");
-            //}
-            //else
-            //{
-            //    amountDecimal = amountDecimal.Insert(0, ".");
-            //}
-                    
-            ////amountDecimal = amountDecimal.Insert(0, ".");
-            //float percentageSpill = Convert.ToSingle(amountDecimal);
-            //return percentageSpill;
-
-            //add If statement because if amount 1-9... add 0 before it
-            //if (amount > 0 || amount < 10)
-            //{
-            //    string amountDecimal = Convert.ToString(amount);
-            //    amountDecimal = amountDecimal.Insert(0, ".0");
-            //    float percentageSpill = Convert.ToSingle(amountDecimal);
-            //    return percentageSpill;
-            //}
-            //else
-            //{
-            //    string amountDecimalStr = Convert.ToString(amount);
-            //    amountDecimalStr = amountDecimalStr.Insert(0, ".");
-            //    float percentageSpill = Convert.ToSingle(amountDecimalStr);
-            //    return percentageSpill;
-            //} */
         }
 
+        public static float rebarNeeded(float squareFeet, float rebarCenter)
+        {
+            float linearInches = squareFeet * 12 ;
+            float linearRebarFeet = (linearInches / rebarCenter) * 2;
+            return linearRebarFeet;
+        }
 
+        
+        
+        public static float standsNeeded(float squareFeet, float standCenter)
+        {
+            float linearInches = squareFeet * 12;
+            float standsNeeded = (linearInches / standCenter) / 2;
+            return standsNeeded;
+        }
+        
 
         //end class
     }
