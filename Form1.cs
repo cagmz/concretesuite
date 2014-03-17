@@ -11,7 +11,7 @@ namespace ConcreteSuite
 {
     public partial class Form1 : Form
     {
-        // TODO: Create checkbox that sends Slab yardage to yardage listbox
+        // TODO: Refactor everything into methods!!
         public void ClearText(Control control)
         {
             /*
@@ -130,6 +130,12 @@ namespace ConcreteSuite
                 if (checkBox3.Checked)
                 {
                     listBox1.Items.Add(Convert.ToString(Calculations.SlabSquareFeet(length, width)));
+                }
+
+                //Send Cubic yardage to Listbox
+                if (checkBox7.Checked)
+                {
+                     listBox2.Items.Add(Convert.ToString((cubicYardage)));
                 }
             
             }
