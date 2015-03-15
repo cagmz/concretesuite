@@ -30,73 +30,72 @@
         {
                this.label1 = new System.Windows.Forms.Label();
                this.groupBox1 = new System.Windows.Forms.GroupBox();
-               this.checkBox3 = new System.Windows.Forms.CheckBox();
-               this.checkBox1 = new System.Windows.Forms.CheckBox();
+               this.chkSlabSqFt = new System.Windows.Forms.CheckBox();
+               this.chkSlabSpillage = new System.Windows.Forms.CheckBox();
                this.comboBox2 = new System.Windows.Forms.ComboBox();
                this.label16 = new System.Windows.Forms.Label();
-               this.button3 = new System.Windows.Forms.Button();
+               this.btnClearSlabTextbox = new System.Windows.Forms.Button();
                this.label10 = new System.Windows.Forms.Label();
                this.label9 = new System.Windows.Forms.Label();
                this.label8 = new System.Windows.Forms.Label();
                this.label14 = new System.Windows.Forms.Label();
                this.label7 = new System.Windows.Forms.Label();
-               this.textBox9 = new System.Windows.Forms.TextBox();
-               this.textBox7 = new System.Windows.Forms.TextBox();
-               this.button1 = new System.Windows.Forms.Button();
-               this.textBox3 = new System.Windows.Forms.TextBox();
-               this.textBox2 = new System.Windows.Forms.TextBox();
-               this.textBox1 = new System.Windows.Forms.TextBox();
+               this.tbSlabSqFt = new System.Windows.Forms.TextBox();
+               this.tbSlabCubicYardage = new System.Windows.Forms.TextBox();
+               this.btnSlabCalculate = new System.Windows.Forms.Button();
+               this.tbSlabThickness = new System.Windows.Forms.TextBox();
+               this.tbSlabWidth = new System.Windows.Forms.TextBox();
+               this.tbSlabLength = new System.Windows.Forms.TextBox();
                this.label4 = new System.Windows.Forms.Label();
                this.label3 = new System.Windows.Forms.Label();
                this.label2 = new System.Windows.Forms.Label();
                this.groupBox2 = new System.Windows.Forms.GroupBox();
-               this.checkBox6 = new System.Windows.Forms.CheckBox();
-               this.checkBox5 = new System.Windows.Forms.CheckBox();
-               this.button4 = new System.Windows.Forms.Button();
+               this.chkCircleYardage = new System.Windows.Forms.CheckBox();
+               this.chkCircleSqFt = new System.Windows.Forms.CheckBox();
+               this.btnClearCircleTextbox = new System.Windows.Forms.Button();
                this.label20 = new System.Windows.Forms.Label();
                this.comboBox3 = new System.Windows.Forms.ComboBox();
-               this.checkBox2 = new System.Windows.Forms.CheckBox();
+               this.chkCircleSpillage = new System.Windows.Forms.CheckBox();
                this.label12 = new System.Windows.Forms.Label();
-               this.textBox8 = new System.Windows.Forms.TextBox();
-               this.textBox6 = new System.Windows.Forms.TextBox();
+               this.tbCircleSqFt = new System.Windows.Forms.TextBox();
+               this.tbCircleCubicYardage = new System.Windows.Forms.TextBox();
                this.label15 = new System.Windows.Forms.Label();
                this.label13 = new System.Windows.Forms.Label();
-               this.button2 = new System.Windows.Forms.Button();
-               this.textBox5 = new System.Windows.Forms.TextBox();
+               this.btnCircleCalculate = new System.Windows.Forms.Button();
+               this.tbCircleThickness = new System.Windows.Forms.TextBox();
                this.label11 = new System.Windows.Forms.Label();
-               this.textBox4 = new System.Windows.Forms.TextBox();
+               this.tbCircleRadius = new System.Windows.Forms.TextBox();
                this.label6 = new System.Windows.Forms.Label();
                this.label5 = new System.Windows.Forms.Label();
                this.comboBox1 = new System.Windows.Forms.ComboBox();
                this.groupBox3 = new System.Windows.Forms.GroupBox();
-               this.button6 = new System.Windows.Forms.Button();
+               this.btnClearRebarTextbox = new System.Windows.Forms.Button();
                this.label25 = new System.Windows.Forms.Label();
                this.label21 = new System.Windows.Forms.Label();
                this.label19 = new System.Windows.Forms.Label();
-               this.textBox12 = new System.Windows.Forms.TextBox();
-               this.textBox11 = new System.Windows.Forms.TextBox();
+               this.tbRebarCenters = new System.Windows.Forms.TextBox();
+               this.tbRebarNeeded = new System.Windows.Forms.TextBox();
                this.label18 = new System.Windows.Forms.Label();
-               this.button5 = new System.Windows.Forms.Button();
+               this.btnCalculateRebar = new System.Windows.Forms.Button();
                this.label17 = new System.Windows.Forms.Label();
-               this.textBox10 = new System.Windows.Forms.TextBox();
+               this.tbRebarSqFeet = new System.Windows.Forms.TextBox();
                this.label22 = new System.Windows.Forms.Label();
                this.label23 = new System.Windows.Forms.Label();
-               this.textBox14 = new System.Windows.Forms.TextBox();
-               this.textBox13 = new System.Windows.Forms.TextBox();
+               this.tbConcreteStandsNeeded = new System.Windows.Forms.TextBox();
+               this.tbConcreteStand = new System.Windows.Forms.TextBox();
                this.groupBox4 = new System.Windows.Forms.GroupBox();
-               this.button7 = new System.Windows.Forms.Button();
+               this.btnCalculateStands = new System.Windows.Forms.Button();
                this.label24 = new System.Windows.Forms.Label();
                this.tabControl1 = new System.Windows.Forms.TabControl();
                this.tabPage1 = new System.Windows.Forms.TabPage();
                this.groupBox6 = new System.Windows.Forms.GroupBox();
                this.label26 = new System.Windows.Forms.Label();
-               this.textBox15 = new System.Windows.Forms.TextBox();
-               this.listBox2 = new System.Windows.Forms.ListBox();
+               this.tbSelectedYards = new System.Windows.Forms.TextBox();
+               this.listBoxCubicYards = new System.Windows.Forms.ListBox();
                this.groupBox5 = new System.Windows.Forms.GroupBox();
                this.checkBox4 = new System.Windows.Forms.CheckBox();
-               this.listBox1 = new System.Windows.Forms.ListBox();
+               this.listBoxSqFt = new System.Windows.Forms.ListBox();
                this.tabPage2 = new System.Windows.Forms.TabPage();
-               this.checkBox7 = new System.Windows.Forms.CheckBox();
                this.groupBox1.SuspendLayout();
                this.groupBox2.SuspendLayout();
                this.groupBox3.SuspendLayout();
@@ -119,52 +118,51 @@
                // 
                // groupBox1
                // 
-               this.groupBox1.Controls.Add(this.checkBox7);
-               this.groupBox1.Controls.Add(this.checkBox3);
-               this.groupBox1.Controls.Add(this.checkBox1);
+               this.groupBox1.Controls.Add(this.chkSlabSqFt);
+               this.groupBox1.Controls.Add(this.chkSlabSpillage);
                this.groupBox1.Controls.Add(this.comboBox2);
                this.groupBox1.Controls.Add(this.label16);
-               this.groupBox1.Controls.Add(this.button3);
+               this.groupBox1.Controls.Add(this.btnClearSlabTextbox);
                this.groupBox1.Controls.Add(this.label10);
                this.groupBox1.Controls.Add(this.label9);
                this.groupBox1.Controls.Add(this.label8);
                this.groupBox1.Controls.Add(this.label14);
                this.groupBox1.Controls.Add(this.label7);
-               this.groupBox1.Controls.Add(this.textBox9);
-               this.groupBox1.Controls.Add(this.textBox7);
-               this.groupBox1.Controls.Add(this.button1);
-               this.groupBox1.Controls.Add(this.textBox3);
-               this.groupBox1.Controls.Add(this.textBox2);
-               this.groupBox1.Controls.Add(this.textBox1);
+               this.groupBox1.Controls.Add(this.tbSlabSqFt);
+               this.groupBox1.Controls.Add(this.tbSlabCubicYardage);
+               this.groupBox1.Controls.Add(this.btnSlabCalculate);
+               this.groupBox1.Controls.Add(this.tbSlabThickness);
+               this.groupBox1.Controls.Add(this.tbSlabWidth);
+               this.groupBox1.Controls.Add(this.tbSlabLength);
                this.groupBox1.Controls.Add(this.label4);
                this.groupBox1.Controls.Add(this.label3);
                this.groupBox1.Controls.Add(this.label2);
                this.groupBox1.Location = new System.Drawing.Point(10, 6);
                this.groupBox1.Name = "groupBox1";
-               this.groupBox1.Size = new System.Drawing.Size(212, 252);
+               this.groupBox1.Size = new System.Drawing.Size(212, 233);
                this.groupBox1.TabIndex = 2;
                this.groupBox1.TabStop = false;
                this.groupBox1.Text = "Slab";
                // 
-               // checkBox3
+               // chkSlabSqFt
                // 
-               this.checkBox3.AutoSize = true;
-               this.checkBox3.Location = new System.Drawing.Point(14, 121);
-               this.checkBox3.Name = "checkBox3";
-               this.checkBox3.Size = new System.Drawing.Size(134, 17);
-               this.checkBox3.TabIndex = 12;
-               this.checkBox3.Text = "Send square feet to list";
-               this.checkBox3.UseVisualStyleBackColor = true;
+               this.chkSlabSqFt.AutoSize = true;
+               this.chkSlabSqFt.Location = new System.Drawing.Point(14, 121);
+               this.chkSlabSqFt.Name = "chkSlabSqFt";
+               this.chkSlabSqFt.Size = new System.Drawing.Size(134, 17);
+               this.chkSlabSqFt.TabIndex = 12;
+               this.chkSlabSqFt.Text = "Send square feet to list";
+               this.chkSlabSqFt.UseVisualStyleBackColor = true;
                // 
-               // checkBox1
+               // chkSlabSpillage
                // 
-               this.checkBox1.AutoSize = true;
-               this.checkBox1.Location = new System.Drawing.Point(14, 102);
-               this.checkBox1.Name = "checkBox1";
-               this.checkBox1.Size = new System.Drawing.Size(45, 17);
-               this.checkBox1.TabIndex = 11;
-               this.checkBox1.Text = "Add";
-               this.checkBox1.UseVisualStyleBackColor = true;
+               this.chkSlabSpillage.AutoSize = true;
+               this.chkSlabSpillage.Location = new System.Drawing.Point(14, 102);
+               this.chkSlabSpillage.Name = "chkSlabSpillage";
+               this.chkSlabSpillage.Size = new System.Drawing.Size(45, 17);
+               this.chkSlabSpillage.TabIndex = 11;
+               this.chkSlabSpillage.Text = "Add";
+               this.chkSlabSpillage.UseVisualStyleBackColor = true;
                // 
                // comboBox2
                // 
@@ -188,15 +186,15 @@
                this.label16.TabIndex = 8;
                this.label16.Text = "% for spillage";
                // 
-               // button3
+               // btnClearSlabTextbox
                // 
-               this.button3.Location = new System.Drawing.Point(12, 166);
-               this.button3.Name = "button3";
-               this.button3.Size = new System.Drawing.Size(70, 25);
-               this.button3.TabIndex = 7;
-               this.button3.Text = "Clear";
-               this.button3.UseVisualStyleBackColor = true;
-               this.button3.Click += new System.EventHandler(this.button3_Click);
+               this.btnClearSlabTextbox.Location = new System.Drawing.Point(11, 143);
+               this.btnClearSlabTextbox.Name = "btnClearSlabTextbox";
+               this.btnClearSlabTextbox.Size = new System.Drawing.Size(70, 25);
+               this.btnClearSlabTextbox.TabIndex = 7;
+               this.btnClearSlabTextbox.Text = "Clear";
+               this.btnClearSlabTextbox.UseVisualStyleBackColor = true;
+               this.btnClearSlabTextbox.Click += new System.EventHandler(this.btnClearSlabTextbox_Click);
                // 
                // label10
                // 
@@ -228,7 +226,7 @@
                // label14
                // 
                this.label14.AutoSize = true;
-               this.label14.Location = new System.Drawing.Point(9, 228);
+               this.label14.Location = new System.Drawing.Point(8, 207);
                this.label14.Name = "label14";
                this.label14.Size = new System.Drawing.Size(68, 13);
                this.label14.TabIndex = 4;
@@ -237,58 +235,58 @@
                // label7
                // 
                this.label7.AutoSize = true;
-               this.label7.Location = new System.Drawing.Point(9, 202);
+               this.label7.Location = new System.Drawing.Point(8, 181);
                this.label7.Name = "label7";
                this.label7.Size = new System.Drawing.Size(80, 13);
                this.label7.TabIndex = 4;
                this.label7.Text = "Cubic Yardage:";
                // 
-               // textBox9
+               // tbSlabSqFt
                // 
-               this.textBox9.Location = new System.Drawing.Point(95, 225);
-               this.textBox9.Name = "textBox9";
-               this.textBox9.ReadOnly = true;
-               this.textBox9.Size = new System.Drawing.Size(61, 20);
-               this.textBox9.TabIndex = 5;
+               this.tbSlabSqFt.Location = new System.Drawing.Point(94, 204);
+               this.tbSlabSqFt.Name = "tbSlabSqFt";
+               this.tbSlabSqFt.ReadOnly = true;
+               this.tbSlabSqFt.Size = new System.Drawing.Size(61, 20);
+               this.tbSlabSqFt.TabIndex = 5;
                // 
-               // textBox7
+               // tbSlabCubicYardage
                // 
-               this.textBox7.Location = new System.Drawing.Point(95, 199);
-               this.textBox7.Name = "textBox7";
-               this.textBox7.ReadOnly = true;
-               this.textBox7.Size = new System.Drawing.Size(61, 20);
-               this.textBox7.TabIndex = 5;
+               this.tbSlabCubicYardage.Location = new System.Drawing.Point(94, 178);
+               this.tbSlabCubicYardage.Name = "tbSlabCubicYardage";
+               this.tbSlabCubicYardage.ReadOnly = true;
+               this.tbSlabCubicYardage.Size = new System.Drawing.Size(61, 20);
+               this.tbSlabCubicYardage.TabIndex = 5;
                // 
-               // button1
+               // btnSlabCalculate
                // 
-               this.button1.Location = new System.Drawing.Point(86, 166);
-               this.button1.Name = "button1";
-               this.button1.Size = new System.Drawing.Size(70, 25);
-               this.button1.TabIndex = 4;
-               this.button1.Text = "Calculate";
-               this.button1.UseVisualStyleBackColor = true;
-               this.button1.Click += new System.EventHandler(this.button1_Click);
+               this.btnSlabCalculate.Location = new System.Drawing.Point(85, 143);
+               this.btnSlabCalculate.Name = "btnSlabCalculate";
+               this.btnSlabCalculate.Size = new System.Drawing.Size(70, 25);
+               this.btnSlabCalculate.TabIndex = 4;
+               this.btnSlabCalculate.Text = "Calculate";
+               this.btnSlabCalculate.UseVisualStyleBackColor = true;
+               this.btnSlabCalculate.Click += new System.EventHandler(this.btnSlabCalculate_Click);
                // 
-               // textBox3
+               // tbSlabThickness
                // 
-               this.textBox3.Location = new System.Drawing.Point(94, 73);
-               this.textBox3.Name = "textBox3";
-               this.textBox3.Size = new System.Drawing.Size(61, 20);
-               this.textBox3.TabIndex = 3;
+               this.tbSlabThickness.Location = new System.Drawing.Point(94, 73);
+               this.tbSlabThickness.Name = "tbSlabThickness";
+               this.tbSlabThickness.Size = new System.Drawing.Size(61, 20);
+               this.tbSlabThickness.TabIndex = 3;
                // 
-               // textBox2
+               // tbSlabWidth
                // 
-               this.textBox2.Location = new System.Drawing.Point(94, 43);
-               this.textBox2.Name = "textBox2";
-               this.textBox2.Size = new System.Drawing.Size(61, 20);
-               this.textBox2.TabIndex = 2;
+               this.tbSlabWidth.Location = new System.Drawing.Point(94, 43);
+               this.tbSlabWidth.Name = "tbSlabWidth";
+               this.tbSlabWidth.Size = new System.Drawing.Size(61, 20);
+               this.tbSlabWidth.TabIndex = 2;
                // 
-               // textBox1
+               // tbSlabLength
                // 
-               this.textBox1.Location = new System.Drawing.Point(94, 17);
-               this.textBox1.Name = "textBox1";
-               this.textBox1.Size = new System.Drawing.Size(61, 20);
-               this.textBox1.TabIndex = 1;
+               this.tbSlabLength.Location = new System.Drawing.Point(94, 17);
+               this.tbSlabLength.Name = "tbSlabLength";
+               this.tbSlabLength.Size = new System.Drawing.Size(61, 20);
+               this.tbSlabLength.TabIndex = 1;
                // 
                // label4
                // 
@@ -319,59 +317,59 @@
                // 
                // groupBox2
                // 
-               this.groupBox2.Controls.Add(this.checkBox6);
-               this.groupBox2.Controls.Add(this.checkBox5);
-               this.groupBox2.Controls.Add(this.button4);
+               this.groupBox2.Controls.Add(this.chkCircleYardage);
+               this.groupBox2.Controls.Add(this.chkCircleSqFt);
+               this.groupBox2.Controls.Add(this.btnClearCircleTextbox);
                this.groupBox2.Controls.Add(this.label20);
                this.groupBox2.Controls.Add(this.comboBox3);
-               this.groupBox2.Controls.Add(this.checkBox2);
+               this.groupBox2.Controls.Add(this.chkCircleSpillage);
                this.groupBox2.Controls.Add(this.label12);
-               this.groupBox2.Controls.Add(this.textBox8);
-               this.groupBox2.Controls.Add(this.textBox6);
+               this.groupBox2.Controls.Add(this.tbCircleSqFt);
+               this.groupBox2.Controls.Add(this.tbCircleCubicYardage);
                this.groupBox2.Controls.Add(this.label15);
                this.groupBox2.Controls.Add(this.label13);
-               this.groupBox2.Controls.Add(this.button2);
-               this.groupBox2.Controls.Add(this.textBox5);
+               this.groupBox2.Controls.Add(this.btnCircleCalculate);
+               this.groupBox2.Controls.Add(this.tbCircleThickness);
                this.groupBox2.Controls.Add(this.label11);
-               this.groupBox2.Controls.Add(this.textBox4);
+               this.groupBox2.Controls.Add(this.tbCircleRadius);
                this.groupBox2.Controls.Add(this.label6);
                this.groupBox2.Controls.Add(this.label5);
                this.groupBox2.Location = new System.Drawing.Point(228, 6);
                this.groupBox2.Name = "groupBox2";
-               this.groupBox2.Size = new System.Drawing.Size(212, 252);
+               this.groupBox2.Size = new System.Drawing.Size(212, 233);
                this.groupBox2.TabIndex = 2;
                this.groupBox2.TabStop = false;
                this.groupBox2.Text = "Circle";
                // 
-               // checkBox6
+               // chkCircleYardage
                // 
-               this.checkBox6.AutoSize = true;
-               this.checkBox6.Location = new System.Drawing.Point(12, 117);
-               this.checkBox6.Name = "checkBox6";
-               this.checkBox6.Size = new System.Drawing.Size(119, 17);
-               this.checkBox6.TabIndex = 13;
-               this.checkBox6.Text = "Send yardage to list";
-               this.checkBox6.UseVisualStyleBackColor = true;
+               this.chkCircleYardage.AutoSize = true;
+               this.chkCircleYardage.Location = new System.Drawing.Point(12, 117);
+               this.chkCircleYardage.Name = "chkCircleYardage";
+               this.chkCircleYardage.Size = new System.Drawing.Size(119, 17);
+               this.chkCircleYardage.TabIndex = 13;
+               this.chkCircleYardage.Text = "Send yardage to list";
+               this.chkCircleYardage.UseVisualStyleBackColor = true;
                // 
-               // checkBox5
+               // chkCircleSqFt
                // 
-               this.checkBox5.AutoSize = true;
-               this.checkBox5.Location = new System.Drawing.Point(12, 94);
-               this.checkBox5.Name = "checkBox5";
-               this.checkBox5.Size = new System.Drawing.Size(134, 17);
-               this.checkBox5.TabIndex = 12;
-               this.checkBox5.Text = "Send square feet to list";
-               this.checkBox5.UseVisualStyleBackColor = true;
+               this.chkCircleSqFt.AutoSize = true;
+               this.chkCircleSqFt.Location = new System.Drawing.Point(12, 94);
+               this.chkCircleSqFt.Name = "chkCircleSqFt";
+               this.chkCircleSqFt.Size = new System.Drawing.Size(134, 17);
+               this.chkCircleSqFt.TabIndex = 12;
+               this.chkCircleSqFt.Text = "Send square feet to list";
+               this.chkCircleSqFt.UseVisualStyleBackColor = true;
                // 
-               // button4
+               // btnClearCircleTextbox
                // 
-               this.button4.Location = new System.Drawing.Point(12, 143);
-               this.button4.Name = "button4";
-               this.button4.Size = new System.Drawing.Size(70, 25);
-               this.button4.TabIndex = 11;
-               this.button4.Text = "Clear";
-               this.button4.UseVisualStyleBackColor = true;
-               this.button4.Click += new System.EventHandler(this.button4_Click);
+               this.btnClearCircleTextbox.Location = new System.Drawing.Point(12, 143);
+               this.btnClearCircleTextbox.Name = "btnClearCircleTextbox";
+               this.btnClearCircleTextbox.Size = new System.Drawing.Size(70, 25);
+               this.btnClearCircleTextbox.TabIndex = 11;
+               this.btnClearCircleTextbox.Text = "Clear";
+               this.btnClearCircleTextbox.UseVisualStyleBackColor = true;
+               this.btnClearCircleTextbox.Click += new System.EventHandler(this.btnClearCircleTextbox_Click);
                // 
                // label20
                // 
@@ -395,15 +393,15 @@
                this.comboBox3.TabIndex = 8;
                this.comboBox3.Text = "10";
                // 
-               // checkBox2
+               // chkCircleSpillage
                // 
-               this.checkBox2.AutoSize = true;
-               this.checkBox2.Location = new System.Drawing.Point(12, 71);
-               this.checkBox2.Name = "checkBox2";
-               this.checkBox2.Size = new System.Drawing.Size(45, 17);
-               this.checkBox2.TabIndex = 7;
-               this.checkBox2.Text = "Add";
-               this.checkBox2.UseVisualStyleBackColor = true;
+               this.chkCircleSpillage.AutoSize = true;
+               this.chkCircleSpillage.Location = new System.Drawing.Point(12, 71);
+               this.chkCircleSpillage.Name = "chkCircleSpillage";
+               this.chkCircleSpillage.Size = new System.Drawing.Size(45, 17);
+               this.chkCircleSpillage.TabIndex = 7;
+               this.chkCircleSpillage.Text = "Add";
+               this.chkCircleSpillage.UseVisualStyleBackColor = true;
                // 
                // label12
                // 
@@ -414,21 +412,21 @@
                this.label12.TabIndex = 6;
                this.label12.Text = "feet";
                // 
-               // textBox8
+               // tbCircleSqFt
                // 
-               this.textBox8.Location = new System.Drawing.Point(92, 203);
-               this.textBox8.Name = "textBox8";
-               this.textBox8.ReadOnly = true;
-               this.textBox8.Size = new System.Drawing.Size(61, 20);
-               this.textBox8.TabIndex = 3;
+               this.tbCircleSqFt.Location = new System.Drawing.Point(92, 203);
+               this.tbCircleSqFt.Name = "tbCircleSqFt";
+               this.tbCircleSqFt.ReadOnly = true;
+               this.tbCircleSqFt.Size = new System.Drawing.Size(61, 20);
+               this.tbCircleSqFt.TabIndex = 3;
                // 
-               // textBox6
+               // tbCircleCubicYardage
                // 
-               this.textBox6.Location = new System.Drawing.Point(92, 177);
-               this.textBox6.Name = "textBox6";
-               this.textBox6.ReadOnly = true;
-               this.textBox6.Size = new System.Drawing.Size(61, 20);
-               this.textBox6.TabIndex = 3;
+               this.tbCircleCubicYardage.Location = new System.Drawing.Point(92, 177);
+               this.tbCircleCubicYardage.Name = "tbCircleCubicYardage";
+               this.tbCircleCubicYardage.ReadOnly = true;
+               this.tbCircleCubicYardage.Size = new System.Drawing.Size(61, 20);
+               this.tbCircleCubicYardage.TabIndex = 3;
                // 
                // label15
                // 
@@ -448,22 +446,22 @@
                this.label13.TabIndex = 5;
                this.label13.Text = "inches";
                // 
-               // button2
+               // btnCircleCalculate
                // 
-               this.button2.Location = new System.Drawing.Point(90, 143);
-               this.button2.Name = "button2";
-               this.button2.Size = new System.Drawing.Size(70, 25);
-               this.button2.TabIndex = 3;
-               this.button2.Text = "Calculate";
-               this.button2.UseVisualStyleBackColor = true;
-               this.button2.Click += new System.EventHandler(this.button2_Click);
+               this.btnCircleCalculate.Location = new System.Drawing.Point(90, 143);
+               this.btnCircleCalculate.Name = "btnCircleCalculate";
+               this.btnCircleCalculate.Size = new System.Drawing.Size(70, 25);
+               this.btnCircleCalculate.TabIndex = 3;
+               this.btnCircleCalculate.Text = "Calculate";
+               this.btnCircleCalculate.UseVisualStyleBackColor = true;
+               this.btnCircleCalculate.Click += new System.EventHandler(this.btnCircleCalculate_Click);
                // 
-               // textBox5
+               // tbCircleThickness
                // 
-               this.textBox5.Location = new System.Drawing.Point(92, 39);
-               this.textBox5.Name = "textBox5";
-               this.textBox5.Size = new System.Drawing.Size(61, 20);
-               this.textBox5.TabIndex = 2;
+               this.tbCircleThickness.Location = new System.Drawing.Point(92, 39);
+               this.tbCircleThickness.Name = "tbCircleThickness";
+               this.tbCircleThickness.Size = new System.Drawing.Size(61, 20);
+               this.tbCircleThickness.TabIndex = 2;
                // 
                // label11
                // 
@@ -474,12 +472,12 @@
                this.label11.TabIndex = 4;
                this.label11.Text = "Cubic Yardage:";
                // 
-               // textBox4
+               // tbCircleRadius
                // 
-               this.textBox4.Location = new System.Drawing.Point(92, 13);
-               this.textBox4.Name = "textBox4";
-               this.textBox4.Size = new System.Drawing.Size(61, 20);
-               this.textBox4.TabIndex = 1;
+               this.tbCircleRadius.Location = new System.Drawing.Point(92, 13);
+               this.tbCircleRadius.Name = "tbCircleRadius";
+               this.tbCircleRadius.Size = new System.Drawing.Size(61, 20);
+               this.tbCircleRadius.TabIndex = 1;
                // 
                // label6
                // 
@@ -514,16 +512,16 @@
                // 
                // groupBox3
                // 
-               this.groupBox3.Controls.Add(this.button6);
+               this.groupBox3.Controls.Add(this.btnClearRebarTextbox);
                this.groupBox3.Controls.Add(this.label25);
                this.groupBox3.Controls.Add(this.label21);
                this.groupBox3.Controls.Add(this.label19);
-               this.groupBox3.Controls.Add(this.textBox12);
-               this.groupBox3.Controls.Add(this.textBox11);
+               this.groupBox3.Controls.Add(this.tbRebarCenters);
+               this.groupBox3.Controls.Add(this.tbRebarNeeded);
                this.groupBox3.Controls.Add(this.label18);
-               this.groupBox3.Controls.Add(this.button5);
+               this.groupBox3.Controls.Add(this.btnCalculateRebar);
                this.groupBox3.Controls.Add(this.label17);
-               this.groupBox3.Controls.Add(this.textBox10);
+               this.groupBox3.Controls.Add(this.tbRebarSqFeet);
                this.groupBox3.Location = new System.Drawing.Point(6, 34);
                this.groupBox3.Name = "groupBox3";
                this.groupBox3.Size = new System.Drawing.Size(237, 137);
@@ -531,15 +529,15 @@
                this.groupBox3.TabStop = false;
                this.groupBox3.Text = "Rebar";
                // 
-               // button6
+               // btnClearRebarTextbox
                // 
-               this.button6.Location = new System.Drawing.Point(40, 73);
-               this.button6.Name = "button6";
-               this.button6.Size = new System.Drawing.Size(70, 25);
-               this.button6.TabIndex = 4;
-               this.button6.Text = "Clear";
-               this.button6.UseVisualStyleBackColor = true;
-               this.button6.Click += new System.EventHandler(this.button6_Click);
+               this.btnClearRebarTextbox.Location = new System.Drawing.Point(40, 73);
+               this.btnClearRebarTextbox.Name = "btnClearRebarTextbox";
+               this.btnClearRebarTextbox.Size = new System.Drawing.Size(70, 25);
+               this.btnClearRebarTextbox.TabIndex = 4;
+               this.btnClearRebarTextbox.Text = "Clear";
+               this.btnClearRebarTextbox.UseVisualStyleBackColor = true;
+               this.btnClearRebarTextbox.Click += new System.EventHandler(this.button6_Click);
                // 
                // label25
                // 
@@ -568,20 +566,20 @@
                this.label19.TabIndex = 6;
                this.label19.Text = "Centers:";
                // 
-               // textBox12
+               // tbRebarCenters
                // 
-               this.textBox12.Location = new System.Drawing.Point(102, 47);
-               this.textBox12.Name = "textBox12";
-               this.textBox12.Size = new System.Drawing.Size(83, 20);
-               this.textBox12.TabIndex = 1;
+               this.tbRebarCenters.Location = new System.Drawing.Point(102, 47);
+               this.tbRebarCenters.Name = "tbRebarCenters";
+               this.tbRebarCenters.Size = new System.Drawing.Size(83, 20);
+               this.tbRebarCenters.TabIndex = 1;
                // 
-               // textBox11
+               // tbRebarNeeded
                // 
-               this.textBox11.Location = new System.Drawing.Point(101, 104);
-               this.textBox11.Name = "textBox11";
-               this.textBox11.ReadOnly = true;
-               this.textBox11.Size = new System.Drawing.Size(83, 20);
-               this.textBox11.TabIndex = 3;
+               this.tbRebarNeeded.Location = new System.Drawing.Point(101, 104);
+               this.tbRebarNeeded.Name = "tbRebarNeeded";
+               this.tbRebarNeeded.ReadOnly = true;
+               this.tbRebarNeeded.Size = new System.Drawing.Size(83, 20);
+               this.tbRebarNeeded.TabIndex = 3;
                // 
                // label18
                // 
@@ -592,15 +590,15 @@
                this.label18.TabIndex = 3;
                this.label18.Text = "Rebar needed:";
                // 
-               // button5
+               // btnCalculateRebar
                // 
-               this.button5.Location = new System.Drawing.Point(116, 73);
-               this.button5.Name = "button5";
-               this.button5.Size = new System.Drawing.Size(70, 25);
-               this.button5.TabIndex = 2;
-               this.button5.Text = "Calculate";
-               this.button5.UseVisualStyleBackColor = true;
-               this.button5.Click += new System.EventHandler(this.button5_Click);
+               this.btnCalculateRebar.Location = new System.Drawing.Point(116, 73);
+               this.btnCalculateRebar.Name = "btnCalculateRebar";
+               this.btnCalculateRebar.Size = new System.Drawing.Size(70, 25);
+               this.btnCalculateRebar.TabIndex = 2;
+               this.btnCalculateRebar.Text = "Calculate";
+               this.btnCalculateRebar.UseVisualStyleBackColor = true;
+               this.btnCalculateRebar.Click += new System.EventHandler(this.button5_Click);
                // 
                // label17
                // 
@@ -611,12 +609,12 @@
                this.label17.TabIndex = 1;
                this.label17.Text = "Square feet:";
                // 
-               // textBox10
+               // tbRebarSqFeet
                // 
-               this.textBox10.Location = new System.Drawing.Point(102, 19);
-               this.textBox10.Name = "textBox10";
-               this.textBox10.Size = new System.Drawing.Size(83, 20);
-               this.textBox10.TabIndex = 0;
+               this.tbRebarSqFeet.Location = new System.Drawing.Point(102, 19);
+               this.tbRebarSqFeet.Name = "tbRebarSqFeet";
+               this.tbRebarSqFeet.Size = new System.Drawing.Size(83, 20);
+               this.tbRebarSqFeet.TabIndex = 0;
                // 
                // label22
                // 
@@ -636,29 +634,29 @@
                this.label23.TabIndex = 3;
                this.label23.Text = "Stand centers:";
                // 
-               // textBox14
+               // tbConcreteStandsNeeded
                // 
-               this.textBox14.Location = new System.Drawing.Point(103, 54);
-               this.textBox14.Name = "textBox14";
-               this.textBox14.ReadOnly = true;
-               this.textBox14.Size = new System.Drawing.Size(83, 20);
-               this.textBox14.TabIndex = 0;
+               this.tbConcreteStandsNeeded.Location = new System.Drawing.Point(103, 54);
+               this.tbConcreteStandsNeeded.Name = "tbConcreteStandsNeeded";
+               this.tbConcreteStandsNeeded.ReadOnly = true;
+               this.tbConcreteStandsNeeded.Size = new System.Drawing.Size(83, 20);
+               this.tbConcreteStandsNeeded.TabIndex = 0;
                // 
-               // textBox13
+               // tbConcreteStand
                // 
-               this.textBox13.Location = new System.Drawing.Point(103, 29);
-               this.textBox13.Name = "textBox13";
-               this.textBox13.Size = new System.Drawing.Size(83, 20);
-               this.textBox13.TabIndex = 0;
+               this.tbConcreteStand.Location = new System.Drawing.Point(103, 29);
+               this.tbConcreteStand.Name = "tbConcreteStand";
+               this.tbConcreteStand.Size = new System.Drawing.Size(83, 20);
+               this.tbConcreteStand.TabIndex = 0;
                // 
                // groupBox4
                // 
-               this.groupBox4.Controls.Add(this.button7);
+               this.groupBox4.Controls.Add(this.btnCalculateStands);
                this.groupBox4.Controls.Add(this.label23);
                this.groupBox4.Controls.Add(this.label22);
-               this.groupBox4.Controls.Add(this.textBox14);
+               this.groupBox4.Controls.Add(this.tbConcreteStandsNeeded);
                this.groupBox4.Controls.Add(this.label24);
-               this.groupBox4.Controls.Add(this.textBox13);
+               this.groupBox4.Controls.Add(this.tbConcreteStand);
                this.groupBox4.Location = new System.Drawing.Point(6, 193);
                this.groupBox4.Name = "groupBox4";
                this.groupBox4.Size = new System.Drawing.Size(237, 122);
@@ -666,15 +664,15 @@
                this.groupBox4.TabStop = false;
                this.groupBox4.Text = "Concrete Stands";
                // 
-               // button7
+               // btnCalculateStands
                // 
-               this.button7.Location = new System.Drawing.Point(116, 80);
-               this.button7.Name = "button7";
-               this.button7.Size = new System.Drawing.Size(70, 25);
-               this.button7.TabIndex = 8;
-               this.button7.Text = "Calculate";
-               this.button7.UseVisualStyleBackColor = true;
-               this.button7.Click += new System.EventHandler(this.button7_Click);
+               this.btnCalculateStands.Location = new System.Drawing.Point(116, 80);
+               this.btnCalculateStands.Name = "btnCalculateStands";
+               this.btnCalculateStands.Size = new System.Drawing.Size(70, 25);
+               this.btnCalculateStands.TabIndex = 8;
+               this.btnCalculateStands.Text = "Calculate";
+               this.btnCalculateStands.UseVisualStyleBackColor = true;
+               this.btnCalculateStands.Click += new System.EventHandler(this.button7_Click);
                // 
                // label24
                // 
@@ -692,7 +690,7 @@
                this.tabControl1.Location = new System.Drawing.Point(12, 33);
                this.tabControl1.Name = "tabControl1";
                this.tabControl1.SelectedIndex = 0;
-               this.tabControl1.Size = new System.Drawing.Size(471, 456);
+               this.tabControl1.Size = new System.Drawing.Size(471, 433);
                this.tabControl1.TabIndex = 5;
                // 
                // tabPage1
@@ -704,7 +702,7 @@
                this.tabPage1.Location = new System.Drawing.Point(4, 22);
                this.tabPage1.Name = "tabPage1";
                this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-               this.tabPage1.Size = new System.Drawing.Size(463, 430);
+               this.tabPage1.Size = new System.Drawing.Size(463, 407);
                this.tabPage1.TabIndex = 0;
                this.tabPage1.Text = "Concrete";
                this.tabPage1.UseVisualStyleBackColor = true;
@@ -712,9 +710,9 @@
                // groupBox6
                // 
                this.groupBox6.Controls.Add(this.label26);
-               this.groupBox6.Controls.Add(this.textBox15);
-               this.groupBox6.Controls.Add(this.listBox2);
-               this.groupBox6.Location = new System.Drawing.Point(228, 264);
+               this.groupBox6.Controls.Add(this.tbSelectedYards);
+               this.groupBox6.Controls.Add(this.listBoxCubicYards);
+               this.groupBox6.Location = new System.Drawing.Point(228, 245);
                this.groupBox6.Name = "groupBox6";
                this.groupBox6.Size = new System.Drawing.Size(212, 156);
                this.groupBox6.TabIndex = 4;
@@ -730,32 +728,32 @@
                this.label26.TabIndex = 2;
                this.label26.Text = "Selected yards:";
                // 
-               // textBox15
+               // tbSelectedYards
                // 
-               this.textBox15.Location = new System.Drawing.Point(90, 130);
-               this.textBox15.Name = "textBox15";
-               this.textBox15.ReadOnly = true;
-               this.textBox15.Size = new System.Drawing.Size(83, 20);
-               this.textBox15.TabIndex = 1;
+               this.tbSelectedYards.Location = new System.Drawing.Point(90, 130);
+               this.tbSelectedYards.Name = "tbSelectedYards";
+               this.tbSelectedYards.ReadOnly = true;
+               this.tbSelectedYards.Size = new System.Drawing.Size(83, 20);
+               this.tbSelectedYards.TabIndex = 1;
                // 
-               // listBox2
+               // listBoxCubicYards
                // 
-               this.listBox2.FormattingEnabled = true;
-               this.listBox2.Items.AddRange(new object[] {
+               this.listBoxCubicYards.FormattingEnabled = true;
+               this.listBoxCubicYards.Items.AddRange(new object[] {
             "25",
             "25"});
-               this.listBox2.Location = new System.Drawing.Point(9, 19);
-               this.listBox2.Name = "listBox2";
-               this.listBox2.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-               this.listBox2.Size = new System.Drawing.Size(165, 95);
-               this.listBox2.TabIndex = 0;
-               this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
+               this.listBoxCubicYards.Location = new System.Drawing.Point(9, 19);
+               this.listBoxCubicYards.Name = "listBoxCubicYards";
+               this.listBoxCubicYards.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+               this.listBoxCubicYards.Size = new System.Drawing.Size(165, 95);
+               this.listBoxCubicYards.TabIndex = 0;
+               this.listBoxCubicYards.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
                // 
                // groupBox5
                // 
                this.groupBox5.Controls.Add(this.checkBox4);
-               this.groupBox5.Controls.Add(this.listBox1);
-               this.groupBox5.Location = new System.Drawing.Point(10, 264);
+               this.groupBox5.Controls.Add(this.listBoxSqFt);
+               this.groupBox5.Location = new System.Drawing.Point(10, 245);
                this.groupBox5.Name = "groupBox5";
                this.groupBox5.Size = new System.Drawing.Size(212, 156);
                this.groupBox5.TabIndex = 3;
@@ -773,14 +771,14 @@
                this.checkBox4.UseVisualStyleBackColor = true;
                this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
                // 
-               // listBox1
+               // listBoxSqFt
                // 
-               this.listBox1.FormattingEnabled = true;
-               this.listBox1.Location = new System.Drawing.Point(12, 19);
-               this.listBox1.Name = "listBox1";
-               this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-               this.listBox1.Size = new System.Drawing.Size(143, 108);
-               this.listBox1.TabIndex = 0;
+               this.listBoxSqFt.FormattingEnabled = true;
+               this.listBoxSqFt.Location = new System.Drawing.Point(12, 19);
+               this.listBoxSqFt.Name = "listBoxSqFt";
+               this.listBoxSqFt.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+               this.listBoxSqFt.Size = new System.Drawing.Size(143, 108);
+               this.listBoxSqFt.TabIndex = 0;
                // 
                // tabPage2
                // 
@@ -794,21 +792,11 @@
                this.tabPage2.Text = "Materials";
                this.tabPage2.UseVisualStyleBackColor = true;
                // 
-               // checkBox7
-               // 
-               this.checkBox7.AutoSize = true;
-               this.checkBox7.Location = new System.Drawing.Point(14, 143);
-               this.checkBox7.Name = "checkBox7";
-               this.checkBox7.Size = new System.Drawing.Size(119, 17);
-               this.checkBox7.TabIndex = 14;
-               this.checkBox7.Text = "Send yardage to list";
-               this.checkBox7.UseVisualStyleBackColor = true;
-               // 
                // Form1
                // 
                this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
                this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-               this.ClientSize = new System.Drawing.Size(486, 493);
+               this.ClientSize = new System.Drawing.Size(486, 478);
                this.Controls.Add(this.tabControl1);
                this.Controls.Add(this.comboBox1);
                this.Controls.Add(this.label1);
@@ -839,22 +827,22 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbSlabThickness;
+        private System.Windows.Forms.TextBox tbSlabWidth;
+        private System.Windows.Forms.TextBox tbSlabLength;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbCircleThickness;
+        private System.Windows.Forms.TextBox tbCircleRadius;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSlabCalculate;
+        private System.Windows.Forms.Button btnCircleCalculate;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tbSlabCubicYardage;
+        private System.Windows.Forms.TextBox tbCircleCubicYardage;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -862,50 +850,49 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox tbCircleSqFt;
+        private System.Windows.Forms.TextBox tbSlabSqFt;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnClearSlabTextbox;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkSlabSpillage;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.CheckBox chkCircleSpillage;
+        private System.Windows.Forms.Button btnClearCircleTextbox;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBoxSqFt;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox chkSlabSqFt;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.CheckBox chkCircleSqFt;
         private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnCalculateRebar;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox tbRebarSqFeet;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox tbRebarNeeded;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TextBox tbRebarCenters;
+        private System.Windows.Forms.Button btnClearRebarTextbox;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox tbConcreteStandsNeeded;
+        private System.Windows.Forms.TextBox tbConcreteStand;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnCalculateStands;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.TextBox tbSelectedYards;
+        private System.Windows.Forms.ListBox listBoxCubicYards;
+        private System.Windows.Forms.CheckBox chkCircleYardage;
 
 
 
