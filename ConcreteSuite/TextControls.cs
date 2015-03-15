@@ -27,11 +27,7 @@ namespace ConcreteSuite
             } else {
                 return false;
             }
-
-
         }
-
-
-
     }
+
 }
