@@ -16,27 +16,23 @@ namespace ConcreteSuite
 			{
 				this.radius = radius;
 				calculateYardage();
+				calculateSquareFeet();
 			}
 		}
 
 		public override void calculateYardage()
 		{
 			double cubicFeet = (this.radius * this.radius * this.thickness * Math.PI) / INCHES_IN_FOOT;
-			double cubicYardage = cubicFeet / CUBIC_YARD;
+			double cubicYardage = Math.Round((cubicFeet / CUBIC_YARD), DECIMALS_TO_ROUND_TO);
 			if (isPositive(cubicYardage))
-			{
 				this.cubicYardage = cubicYardage;
-			}
-
 		}
 
 		public override void calculateSquareFeet()
 		{
 			double squareFeet = Math.Round((this.radius * this.radius) * Math.PI);
 			if (isPositive(squareFeet))
-			{
 				this.squareFeet = squareFeet;
-			}
 		}
 
 		public double getRadius() { return this.radius; }
