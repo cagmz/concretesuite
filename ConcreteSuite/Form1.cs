@@ -9,27 +9,23 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
 
-/* Todo: On textChanged for rebar stands, update stands needed in listView
- * Move updateListView to jobSite and return ListViewItems
+/* Todo:
  * Create running total of all rebar and stands needed based on selected items in listview
  * Allow deletion of listView items using Del key, or maybe use a checkmark
  */
-
 
 namespace ConcreteSuite
 {
 	public partial class Form1 : Form
 	{
-
 		JobSite site;
 		Concrete concrete;
 
 		public void ClearText(Control control)
 		{
 			/*
-			* thanks to 
-			* http://stackoverflow.com/posts/4811246/revisions
-			* Must recurse through Child controls
+			* thanks to http://stackoverflow.com/posts/4811246/revisions
+			* Recurse through Child controls
 			*/
 			foreach (var c in control.Controls)
 			{
@@ -38,19 +34,12 @@ namespace ConcreteSuite
 			}
 		}
 
-
-		// use regex to validate
-		// if it contains a-zAz " " or dashes,special characters
+		// Check for empty and null strings
+		// If it contains a-zAz, " ", dashes or special characters,
 		// then pop a message box
 		public bool validate(string text)
 		{
-			// sanitize input of textboxes
-			// hopefully in a way that
-			// will accomodate any future textboxes
-			// check for empty and null strings
-
 			string pattern = "^[+]?([.]\\d+|\\d+[.]?\\d*)$";
-
 			if (Regex.IsMatch(text, pattern))
 				return true;
 			else return false;
@@ -91,58 +80,13 @@ namespace ConcreteSuite
 			textBox.Text = Convert.ToString(squareFeet);
 		}
 
-		// move this into JobSite class, but return Items[] intead of a new listView
 		public void updateConcreteListView()
 		{
 			concreteListView.Items.Clear();
-			int listViewColumns = concreteListView.Columns.Count;
-			// listView columns indices
-			int concreteId = 0;
-			int formFactor = 1;
-			int dimensions = 2;
-			int squareFeet = 3;
-			int cubicYardage = 4;
-			int rebarNeeded = 5;
-			int standsNeeded = 6;
-
-			foreach(Concrete concrete in site.getList())
-			{
-				ListViewItem concreteItem;
-				string[] concreteAttributes = new string[listViewColumns];
-				for(int i = 0; i < concreteAttributes.Length; i++)
-				{
-					switch(i)
-					{
-						case 0:
-							concreteAttributes[concreteId] = Convert.ToString(concrete.getConcreteId());
-							break;
-						case 1:
-							concreteAttributes[formFactor] = concrete.getFormFactor();
-							break;
-						case 2:
-							concreteAttributes[dimensions] = concrete.getDimensions();
-							break;
-						case 3:
-							concreteAttributes[squareFeet] = Convert.ToString(concrete.getSquareFeet());
-							break;
-						case 4:
-							concreteAttributes[cubicYardage] = Convert.ToString(concrete.getCubicYardage());
-							break;
-						case 5:
-							concreteAttributes[rebarNeeded] = Convert.ToString(concrete.getRebarNeeded());
-							break;
-						case 6:
-							concreteAttributes[standsNeeded] = Convert.ToString(concrete.getStandsNeeded());
-							break;
-						default:
-							break;
-					}
-				}
-				concreteItem = new ListViewItem(concreteAttributes);
-				concreteListView.Items.Add(concreteItem);
-			}
+			site.updateConcreteItems();
+			foreach(ListViewItem item in site.getConcreteItems())
+				concreteListView.Items.Add(item);
 		}
-
 
 		public Form1()
 		{
@@ -153,10 +97,7 @@ namespace ConcreteSuite
 			concreteListView.Columns.AddRange(site.getColumnHeaders());
 		}
 
-		private void Form1_Load(object sender, EventArgs e)
-		{
-
-		}
+		private void Form1_Load(object sender, EventArgs e) { }
 
 		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{
@@ -202,7 +143,6 @@ namespace ConcreteSuite
 
 		private void btnCircleCalculate_Click(object sender, EventArgs e)
 		{
-
 			TextBox[] textBoxArray = new TextBox[] { tbCircleRadius, tbCircleThickness };
 			bool valid = validateTextBoxes(textBoxArray);
 
@@ -210,61 +150,23 @@ namespace ConcreteSuite
 			{
 				double thickness = double.Parse(tbCircleThickness.Text);
 				double radius = double.Parse(tbCircleRadius.Text);
+				double spillage = double.Parse(cBCircleSpillage.Text);
 
-				concrete = new Circle(thickness, radius);
+				concrete = new Circle(thickness, radius, spillage);
 				site.addConcrete(concrete);
 
-				//populateCubicYardage(tbCircleCubicYardage, concrete);
+				populateCubicYardage(tbCircleCubicYardage, concrete);
 				populateSquareFeet(tbCircleSqFt, concrete);
 				updateConcreteListView();
-
 			}
 			else validationWarning();
 		}
 
-		private void btnClearSlabTextbox_Click(object sender, EventArgs e)
-		{
-			ClearText(gbSlab);
-		}
+		private void btnClearSlabTextbox_Click(object sender, EventArgs e) { ClearText(gbSlab); }
 
-		private void btnClearCircleTextbox_Click(object sender, EventArgs e)
-		{
-			ClearText(gbCircle);
-		}
+		private void btnClearCircleTextbox_Click(object sender, EventArgs e) { ClearText(gbCircle); }
 
-		/*
-		private void button5_Click(object sender, EventArgs e)
-		{
-			if (TextControls.Validate(Convert.ToString(tbRebarSqFeet.Text))
-				&& TextControls.Validate(Convert.ToString(tbRebarCenters.Text))
-			   )
-			{
-				float selectedSquareFeet = float.Parse(Convert.ToString(tbRebarSqFeet.Text));
-
-				//rebar
-				float rebarCenter = float.Parse(Convert.ToString(tbRebarCenters.Text));
-				float linearRebarFeet = (float)Calculations.rebarNeeded(selectedSquareFeet, rebarCenter);
-				tbRebarNeeded.Text = Convert.ToString(linearRebarFeet);
-
-			}
-			else
-			{
-				MessageBox.Show("Textboxes must have number values.\n"
-					+ "No letters or special characters are permitted.",
-					"Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
-		}
-		*/
-
-		private void button6_Click(object sender, EventArgs e)
-		{
-			ClearText(groupBox3);
-		}
-
-		private void cBSlabSpillage_SelectedIndexChanged(object sender, EventArgs e)
-		{
-
-		}
+		private void cBSlabSpillage_SelectedIndexChanged(object sender, EventArgs e){ }
 
 		private void tbRebarCenters_TextChanged(object sender, EventArgs e)
 		{
@@ -276,29 +178,15 @@ namespace ConcreteSuite
 			}
 		}
 
-
-		/*
-		private void button7_Click(object sender, EventArgs e)
+		private void tbConcreteStand_TextChanged(object sender, EventArgs e)
 		{
-			if (TextControls.Validate(Convert.ToString(tbConcreteStand.Text)))
+			if (validate(tbConcreteStand.Text))
 			{
-				float selectedSquareFeet = float.Parse(Convert.ToString(tbRebarSqFeet.Text));
-
-				//stands
-				float standCenter = float.Parse(Convert.ToString(tbConcreteStand.Text));
-				float standsTotal = (float)Calculations.standsNeeded(selectedSquareFeet, standCenter);
-				tbConcreteStandsNeeded.Text = (Convert.ToString(standsTotal));
-			}
-			else
-			{
-				MessageBox.Show("Textboxes must have number values.\n"
-					+ "No letters or special characters are permitted.",
-					"Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				double spacing = double.Parse(tbConcreteStand.Text);
+				site.updateStandsNeeded(spacing);
+				updateConcreteListView();
 			}
 		}
-		*/
-
-
 
 	}
 }

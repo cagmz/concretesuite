@@ -11,13 +11,13 @@ namespace ConcreteSuite
 		private double length;
 		private double width;
 
-		public Slab(double thickness, double length, double width, double spillagePercent) : base(thickness)
+		public Slab(double thickness, double length, double width, double spillage) : base(thickness)
 		{
 			if (isPositive(length) && isPositive(width) && isPositive(spillagePercent))
 			{
 				this.length = length;
 				this.width = width;
-				this.spillagePercent = spillagePercent / PERCENT;
+				spillagePercent = spillage / PERCENT;
 				calculateYardage();
 				calculateSquareFeet();
 			}

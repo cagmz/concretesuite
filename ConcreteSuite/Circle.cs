@@ -10,11 +10,12 @@ namespace ConcreteSuite
 	{
 		private double radius;
 
-		public Circle(double thickness, double radius) : base(thickness)
+		public Circle(double thickness, double radius, double spillage) : base(thickness)
 		{
 			if (isPositive(radius))
 			{
 				this.radius = radius;
+				spillagePercent = spillage / PERCENT;
 				calculateYardage();
 				calculateSquareFeet();
 			}
@@ -23,7 +24,10 @@ namespace ConcreteSuite
 		public override void calculateYardage()
 		{
 			double cubicFeet = (this.radius * this.radius * this.thickness * Math.PI) / INCHES_IN_FOOT;
-			double cubicYardage = Math.Round((cubicFeet / CUBIC_YARD), DECIMALS_TO_ROUND_TO);
+			double cubicYardage = cubicFeet / CUBIC_YARD;
+			if (spillagePercent > 0)
+				cubicYardage = Math.Round(((cubicYardage + (cubicYardage * spillagePercent) )), DECIMALS_TO_ROUND_TO);
+			else cubicYardage = Math.Round(cubicYardage, DECIMALS_TO_ROUND_TO);
 			if (isPositive(cubicYardage))
 				this.cubicYardage = cubicYardage;
 		}

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-			System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+			System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
 			this.label1 = new System.Windows.Forms.Label();
 			this.gbSlab = new System.Windows.Forms.GroupBox();
 			this.cBSlabSpillage = new System.Windows.Forms.ComboBox();
@@ -66,17 +66,17 @@
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
-			this.label25 = new System.Windows.Forms.Label();
-			this.lblRebarSpacing = new System.Windows.Forms.Label();
+			this.gBMaterialSpacing = new System.Windows.Forms.GroupBox();
+			this.tbConcreteStand = new System.Windows.Forms.TextBox();
 			this.tbRebarCenters = new System.Windows.Forms.TextBox();
+			this.lblRebarSpacing = new System.Windows.Forms.Label();
+			this.lblStandCenters = new System.Windows.Forms.Label();
+			this.label25 = new System.Windows.Forms.Label();
 			this.tbRebarNeeded = new System.Windows.Forms.TextBox();
 			this.label18 = new System.Windows.Forms.Label();
-			this.lblStandCenters = new System.Windows.Forms.Label();
 			this.label22 = new System.Windows.Forms.Label();
 			this.tbConcreteStandsNeeded = new System.Windows.Forms.TextBox();
-			this.tbConcreteStand = new System.Windows.Forms.TextBox();
 			this.concreteListView = new System.Windows.Forms.ListView();
-			this.gBMaterialSpacing = new System.Windows.Forms.GroupBox();
 			this.gbSlab.SuspendLayout();
 			this.gbCircle.SuspendLayout();
 			this.tabControl1.SuspendLayout();
@@ -457,14 +457,34 @@
 			this.tabPage1.Text = "Concrete";
 			this.tabPage1.UseVisualStyleBackColor = true;
 			// 
-			// label25
+			// gBMaterialSpacing
 			// 
-			this.label25.AutoSize = true;
-			this.label25.Location = new System.Drawing.Point(643, 453);
-			this.label25.Name = "label25";
-			this.label25.Size = new System.Drawing.Size(25, 13);
-			this.label25.TabIndex = 7;
-			this.label25.Text = "feet";
+			this.gBMaterialSpacing.Controls.Add(this.tbConcreteStand);
+			this.gBMaterialSpacing.Controls.Add(this.tbRebarCenters);
+			this.gBMaterialSpacing.Controls.Add(this.lblRebarSpacing);
+			this.gBMaterialSpacing.Controls.Add(this.lblStandCenters);
+			this.gBMaterialSpacing.Location = new System.Drawing.Point(14, 246);
+			this.gBMaterialSpacing.Name = "gBMaterialSpacing";
+			this.gBMaterialSpacing.Size = new System.Drawing.Size(243, 139);
+			this.gBMaterialSpacing.TabIndex = 3;
+			this.gBMaterialSpacing.TabStop = false;
+			this.gBMaterialSpacing.Text = "Material Spacing";
+			// 
+			// tbConcreteStand
+			// 
+			this.tbConcreteStand.Location = new System.Drawing.Point(85, 60);
+			this.tbConcreteStand.Name = "tbConcreteStand";
+			this.tbConcreteStand.Size = new System.Drawing.Size(61, 20);
+			this.tbConcreteStand.TabIndex = 0;
+			this.tbConcreteStand.TextChanged += new System.EventHandler(this.tbConcreteStand_TextChanged);
+			// 
+			// tbRebarCenters
+			// 
+			this.tbRebarCenters.Location = new System.Drawing.Point(85, 30);
+			this.tbRebarCenters.Name = "tbRebarCenters";
+			this.tbRebarCenters.Size = new System.Drawing.Size(61, 20);
+			this.tbRebarCenters.TabIndex = 1;
+			this.tbRebarCenters.TextChanged += new System.EventHandler(this.tbRebarCenters_TextChanged);
 			// 
 			// lblRebarSpacing
 			// 
@@ -475,13 +495,23 @@
 			this.lblRebarSpacing.TabIndex = 6;
 			this.lblRebarSpacing.Text = "Rebar spacing:                       inches";
 			// 
-			// tbRebarCenters
+			// lblStandCenters
 			// 
-			this.tbRebarCenters.Location = new System.Drawing.Point(85, 30);
-			this.tbRebarCenters.Name = "tbRebarCenters";
-			this.tbRebarCenters.Size = new System.Drawing.Size(61, 20);
-			this.tbRebarCenters.TabIndex = 1;
-			this.tbRebarCenters.TextChanged += new System.EventHandler(this.tbRebarCenters_TextChanged);
+			this.lblStandCenters.AutoSize = true;
+			this.lblStandCenters.Location = new System.Drawing.Point(6, 63);
+			this.lblStandCenters.Name = "lblStandCenters";
+			this.lblStandCenters.Size = new System.Drawing.Size(179, 13);
+			this.lblStandCenters.TabIndex = 3;
+			this.lblStandCenters.Text = "Stand centers:                        inches";
+			// 
+			// label25
+			// 
+			this.label25.AutoSize = true;
+			this.label25.Location = new System.Drawing.Point(643, 453);
+			this.label25.Name = "label25";
+			this.label25.Size = new System.Drawing.Size(25, 13);
+			this.label25.TabIndex = 7;
+			this.label25.Text = "feet";
 			// 
 			// tbRebarNeeded
 			// 
@@ -500,15 +530,6 @@
 			this.label18.TabIndex = 3;
 			this.label18.Text = "Rebar needed:";
 			// 
-			// lblStandCenters
-			// 
-			this.lblStandCenters.AutoSize = true;
-			this.lblStandCenters.Location = new System.Drawing.Point(6, 63);
-			this.lblStandCenters.Name = "lblStandCenters";
-			this.lblStandCenters.Size = new System.Drawing.Size(179, 13);
-			this.lblStandCenters.TabIndex = 3;
-			this.lblStandCenters.Text = "Stand centers:                        inches";
-			// 
 			// label22
 			// 
 			this.label22.AutoSize = true;
@@ -526,45 +547,25 @@
 			this.tbConcreteStandsNeeded.Size = new System.Drawing.Size(64, 20);
 			this.tbConcreteStandsNeeded.TabIndex = 0;
 			// 
-			// tbConcreteStand
-			// 
-			this.tbConcreteStand.Location = new System.Drawing.Point(85, 60);
-			this.tbConcreteStand.Name = "tbConcreteStand";
-			this.tbConcreteStand.Size = new System.Drawing.Size(61, 20);
-			this.tbConcreteStand.TabIndex = 0;
-			// 
 			// concreteListView
 			// 
-			listViewGroup5.Header = "ListViewGroup";
-			listViewGroup5.Name = "listViewGroup1";
+			listViewGroup1.Header = "ListViewGroup";
+			listViewGroup1.Name = "listViewGroup1";
 			this.concreteListView.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup5});
+            listViewGroup1});
 			this.concreteListView.Location = new System.Drawing.Point(489, 185);
 			this.concreteListView.Name = "concreteListView";
 			this.concreteListView.ShowGroups = false;
-			this.concreteListView.Size = new System.Drawing.Size(418, 255);
+			this.concreteListView.Size = new System.Drawing.Size(460, 255);
 			this.concreteListView.TabIndex = 6;
 			this.concreteListView.UseCompatibleStateImageBehavior = false;
 			this.concreteListView.View = System.Windows.Forms.View.Details;
-			// 
-			// gBMaterialSpacing
-			// 
-			this.gBMaterialSpacing.Controls.Add(this.tbConcreteStand);
-			this.gBMaterialSpacing.Controls.Add(this.tbRebarCenters);
-			this.gBMaterialSpacing.Controls.Add(this.lblRebarSpacing);
-			this.gBMaterialSpacing.Controls.Add(this.lblStandCenters);
-			this.gBMaterialSpacing.Location = new System.Drawing.Point(14, 246);
-			this.gBMaterialSpacing.Name = "gBMaterialSpacing";
-			this.gBMaterialSpacing.Size = new System.Drawing.Size(243, 139);
-			this.gBMaterialSpacing.TabIndex = 3;
-			this.gBMaterialSpacing.TabStop = false;
-			this.gBMaterialSpacing.Text = "Material Spacing";
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(917, 500);
+			this.ClientSize = new System.Drawing.Size(961, 500);
 			this.Controls.Add(this.label22);
 			this.Controls.Add(this.tbConcreteStandsNeeded);
 			this.Controls.Add(this.label25);
