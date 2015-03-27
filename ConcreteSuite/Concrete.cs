@@ -10,27 +10,33 @@ namespace ConcreteSuite
 	public abstract class Concrete
 	{
 		protected static int concreteIdCounter = 0;
+		protected readonly int DECIMALS_TO_ROUND_TO = 2;
 		protected int concreteId;
 		protected double thickness;
 		protected double cubicYardage;
+		protected double spillagePercent;
 		protected double squareFeet;
-
+		protected double linearRebarFeet;
+		protected double standsNeeded;
 		protected String formFactor;
+
 		protected readonly String[] concreteTypes = { "Slab", "Circle" };
+		protected readonly int SLAB_INDEX = 0;
+		protected readonly int CIRCLE_INDEX = 1;
 		protected readonly int INCHES_IN_FOOT = 12;
 		protected readonly int CUBIC_YARD = 27;
-
-		protected double rebarNeeded;
-		protected double standsNeeded;
+		protected readonly int PERCENT = 100;
 
 		public Concrete()
 		{
-			this.thickness = 0.01;
-			this.cubicYardage = 0.01;
-			this.squareFeet = 0.01;
+			thickness = 0.00;
+			cubicYardage = 0.00;
+			squareFeet = 0.00;
+			linearRebarFeet = 0.00;
+			standsNeeded = 0.00;
 			concreteIdCounter++;
 			setConcreteId(concreteIdCounter);
-			this.formFactor = concreteTypes[0];
+			this.formFactor = concreteTypes[SLAB_INDEX];
 		}
 
 		public Concrete(double thickness)
@@ -38,49 +44,41 @@ namespace ConcreteSuite
 			if (isPositive(thickness))
 			{
 				this.thickness = thickness;
+				linearRebarFeet = 0.00;
+				standsNeeded = 0.00;
+				concreteIdCounter++;
+				setConcreteId(concreteIdCounter);
 				if (this is Slab)
-				{
-					this.formFactor = concreteTypes[0];
-					concreteIdCounter++;
-					setConcreteId(concreteIdCounter);
-				}
+					this.formFactor = concreteTypes[SLAB_INDEX];
 				else if (this is Circle)
-				{
-					this.formFactor = concreteTypes[1];
-					concreteIdCounter++;
-					setConcreteId(concreteIdCounter);
-				}
-				else
-				{
-					MessageBox.Show("Invalid formFactor in Concrete constructor");
-				}
+					this.formFactor = concreteTypes[CIRCLE_INDEX];
+				else MessageBox.Show("Invalid formFactor in Concrete constructor");
 			}
 		}
 
-		public double findRebarNeeded(double squareFeet, double rebarCenter)
+		public void setRebarNeeded(double squareFeet, double rebarCenter)
 		{
 			double linearInches = squareFeet * INCHES_IN_FOOT;
-			double linearRebarFeet = (linearInches / rebarCenter) * 2;
-			return linearRebarFeet;
+			linearRebarFeet = Math.Round(((linearInches / rebarCenter) * 2), DECIMALS_TO_ROUND_TO);
 		}
 
-
-		public double findStandsNeeded(double squareFeet, double standCenter)
+		public void setStandsNeeded(double squareFeet, double standCenter)
 		{
 			double linearInches = squareFeet * INCHES_IN_FOOT;
-			double standsNeeded = (linearInches / standCenter) / 2;
-			return standsNeeded;
+			standsNeeded = Math.Round(((linearInches / standCenter) / 2), DECIMALS_TO_ROUND_TO);
 		}
+
+		public double getRebarNeeded() { return linearRebarFeet; }
+
+		public double getStandsNeeded() { return standsNeeded; }
 
 		public double getThickness() { return this.thickness; }
+
+		public double getSpillagePercent() { return this.spillagePercent; }
 
 		public double getSquareFeet() { return this.squareFeet; }
 
 		public double getCubicYardage() { return this.cubicYardage; }
-
-		//public void setConcreteId(int id) { this.concreteId = id; }
-
-		//public int getConcreteId() { return this.concreteId; }
 
 		public void setConcreteId(int id) { concreteId = id; }
 
@@ -88,29 +86,18 @@ namespace ConcreteSuite
 
 		public string getFormFactor() { return formFactor; }
 
-		public abstract string getDimensions();
-
-		/*
-				  public void setCubicYardage(double cubicYardage)
-				  {
-					   if(cubicYardage > 0)
-					   {
-							this.cubicYardage = cubicYardage;
-					   }
-					   else
-					   {
-							MessageBox.Show("CubicYardage cannot be negative.")
-					   }
-				  }
-		*/
-
 		public Boolean isPositive(double value)
 		{
-			if (value > 0)
+			if (value >= 0)
 				return true;
-			else
-				return false;
+			else return false;
 		}
+
+		/*
+		The following methods are implemented in Slab or Circle objects since
+		the results depend on their form factor.
+		*/
+		public abstract string getDimensions();
 
 		public abstract void calculateYardage();
 

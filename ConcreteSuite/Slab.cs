@@ -11,12 +11,13 @@ namespace ConcreteSuite
 		private double length;
 		private double width;
 
-		public Slab(double thickness, double length, double width) : base(thickness)
+		public Slab(double thickness, double length, double width, double spillage) : base(thickness)
 		{
-			if (isPositive(length) && isPositive(width))
+			if (isPositive(length) && isPositive(width) && isPositive(spillagePercent))
 			{
 				this.length = length;
 				this.width = width;
+				spillagePercent = spillage / PERCENT;
 				calculateYardage();
 				calculateSquareFeet();
 			}
@@ -24,12 +25,22 @@ namespace ConcreteSuite
 
 		public override void calculateYardage()
 		{
-			double cubicFeet = (getThickness() * length * width) / INCHES_IN_FOOT;
-			double cubicYardage = cubicFeet / CUBIC_YARD;
-			this.cubicYardage = cubicYardage;
+			double cubicFeet = (getThickness() * getLength() * getWidth()) / INCHES_IN_FOOT;
+			double cubicYardage = (cubicFeet / CUBIC_YARD);
+			if (spillagePercent > 0)
+				cubicYardage = Math.Round((cubicYardage + (cubicYardage * spillagePercent)), DECIMALS_TO_ROUND_TO);
+			else cubicYardage = Math.Round(cubicYardage, DECIMALS_TO_ROUND_TO);
+
+			if (isPositive(cubicYardage))
+				this.cubicYardage = cubicYardage;
 		}
 
-		public override void calculateSquareFeet() { this.squareFeet = getLength() * getWidth(); }
+		public override void calculateSquareFeet()
+		{
+			double squareFeet = Math.Round((getLength() * getWidth()), DECIMALS_TO_ROUND_TO);
+			if (isPositive(squareFeet))
+				this.squareFeet = squareFeet;
+		}
 
 		public double getLength() { return this.length; }
 
