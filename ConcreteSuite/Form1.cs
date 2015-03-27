@@ -10,7 +10,8 @@ using System.Text.RegularExpressions;
 
 
 /* Todo:
- * Create running total of all rebar and stands needed based on selected items in listview
+ * Create running total of all rebar and stands needed based on all items in listview
+ * // Maybe update to tallying rebar based on selected items?
  * Allow deletion of listView items using Del key, or maybe use a checkmark
  */
 
@@ -86,6 +87,16 @@ namespace ConcreteSuite
 			site.updateConcreteItems();
 			foreach(ListViewItem item in site.getConcreteItems())
 				concreteListView.Items.Add(item);
+		}
+
+		public void updateTotalRebarNeeded()
+		{
+			tbTotalRebarNeeded.Text = Convert.ToString(site.getRebarNeeded());
+		}
+
+		public void updateTotalStandsNeeded()
+		{
+			tbTotalStandsNeeded.Text = Convert.ToString(site.getStandsNeeded());
 		}
 
 		public Form1()
@@ -175,6 +186,7 @@ namespace ConcreteSuite
 				double spacing = double.Parse(tbRebarCenters.Text);
 				site.updateRebarNeeded(spacing);
 				updateConcreteListView();
+				updateTotalRebarNeeded();
 			}
 		}
 
@@ -185,7 +197,13 @@ namespace ConcreteSuite
 				double spacing = double.Parse(tbConcreteStand.Text);
 				site.updateStandsNeeded(spacing);
 				updateConcreteListView();
+				updateTotalStandsNeeded();
 			}
+		}
+
+		private void concreteListView_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
 		}
 
 	}

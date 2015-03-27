@@ -10,7 +10,7 @@ namespace ConcreteSuite
 	public abstract class Concrete
 	{
 		protected static int concreteIdCounter = 0;
-		
+		protected readonly int DECIMALS_TO_ROUND_TO = 2;
 		protected int concreteId;
 		protected double thickness;
 		protected double cubicYardage;
@@ -25,7 +25,6 @@ namespace ConcreteSuite
 		protected readonly int CIRCLE_INDEX = 1;
 		protected readonly int INCHES_IN_FOOT = 12;
 		protected readonly int CUBIC_YARD = 27;
-		protected readonly int DECIMALS_TO_ROUND_TO = 2;
 		protected readonly int PERCENT = 100;
 
 		public Concrete()

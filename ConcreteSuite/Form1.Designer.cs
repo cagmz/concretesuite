@@ -72,10 +72,10 @@
 			this.lblRebarSpacing = new System.Windows.Forms.Label();
 			this.lblStandCenters = new System.Windows.Forms.Label();
 			this.label25 = new System.Windows.Forms.Label();
-			this.tbRebarNeeded = new System.Windows.Forms.TextBox();
+			this.tbTotalRebarNeeded = new System.Windows.Forms.TextBox();
 			this.label18 = new System.Windows.Forms.Label();
 			this.label22 = new System.Windows.Forms.Label();
-			this.tbConcreteStandsNeeded = new System.Windows.Forms.TextBox();
+			this.tbTotalStandsNeeded = new System.Windows.Forms.TextBox();
 			this.concreteListView = new System.Windows.Forms.ListView();
 			this.gbSlab.SuspendLayout();
 			this.gbCircle.SuspendLayout();
@@ -465,7 +465,7 @@
 			this.gBMaterialSpacing.Controls.Add(this.lblStandCenters);
 			this.gBMaterialSpacing.Location = new System.Drawing.Point(14, 246);
 			this.gBMaterialSpacing.Name = "gBMaterialSpacing";
-			this.gBMaterialSpacing.Size = new System.Drawing.Size(243, 139);
+			this.gBMaterialSpacing.Size = new System.Drawing.Size(208, 139);
 			this.gBMaterialSpacing.TabIndex = 3;
 			this.gBMaterialSpacing.TabStop = false;
 			this.gBMaterialSpacing.Text = "Material Spacing";
@@ -513,13 +513,13 @@
 			this.label25.TabIndex = 7;
 			this.label25.Text = "feet";
 			// 
-			// tbRebarNeeded
+			// tbTotalRebarNeeded
 			// 
-			this.tbRebarNeeded.Location = new System.Drawing.Point(578, 450);
-			this.tbRebarNeeded.Name = "tbRebarNeeded";
-			this.tbRebarNeeded.ReadOnly = true;
-			this.tbRebarNeeded.Size = new System.Drawing.Size(61, 20);
-			this.tbRebarNeeded.TabIndex = 3;
+			this.tbTotalRebarNeeded.Location = new System.Drawing.Point(578, 450);
+			this.tbTotalRebarNeeded.Name = "tbTotalRebarNeeded";
+			this.tbTotalRebarNeeded.ReadOnly = true;
+			this.tbTotalRebarNeeded.Size = new System.Drawing.Size(61, 20);
+			this.tbTotalRebarNeeded.TabIndex = 3;
 			// 
 			// label18
 			// 
@@ -539,13 +539,13 @@
 			this.label22.TabIndex = 3;
 			this.label22.Text = "Stands needed:";
 			// 
-			// tbConcreteStandsNeeded
+			// tbTotalStandsNeeded
 			// 
-			this.tbConcreteStandsNeeded.Location = new System.Drawing.Point(773, 446);
-			this.tbConcreteStandsNeeded.Name = "tbConcreteStandsNeeded";
-			this.tbConcreteStandsNeeded.ReadOnly = true;
-			this.tbConcreteStandsNeeded.Size = new System.Drawing.Size(64, 20);
-			this.tbConcreteStandsNeeded.TabIndex = 0;
+			this.tbTotalStandsNeeded.Location = new System.Drawing.Point(773, 446);
+			this.tbTotalStandsNeeded.Name = "tbTotalStandsNeeded";
+			this.tbTotalStandsNeeded.ReadOnly = true;
+			this.tbTotalStandsNeeded.Size = new System.Drawing.Size(64, 20);
+			this.tbTotalStandsNeeded.TabIndex = 0;
 			// 
 			// concreteListView
 			// 
@@ -560,6 +560,7 @@
 			this.concreteListView.TabIndex = 6;
 			this.concreteListView.UseCompatibleStateImageBehavior = false;
 			this.concreteListView.View = System.Windows.Forms.View.Details;
+			this.concreteListView.SelectedIndexChanged += new System.EventHandler(this.concreteListView_SelectedIndexChanged);
 			// 
 			// Form1
 			// 
@@ -567,9 +568,9 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(961, 500);
 			this.Controls.Add(this.label22);
-			this.Controls.Add(this.tbConcreteStandsNeeded);
+			this.Controls.Add(this.tbTotalStandsNeeded);
 			this.Controls.Add(this.label25);
-			this.Controls.Add(this.tbRebarNeeded);
+			this.Controls.Add(this.tbTotalRebarNeeded);
 			this.Controls.Add(this.concreteListView);
 			this.Controls.Add(this.label18);
 			this.Controls.Add(this.tabControl1);
@@ -634,11 +635,11 @@
 		private System.Windows.Forms.Label label25;
 		private System.Windows.Forms.Label lblRebarSpacing;
 		private System.Windows.Forms.TextBox tbRebarCenters;
-		private System.Windows.Forms.TextBox tbRebarNeeded;
+		private System.Windows.Forms.TextBox tbTotalRebarNeeded;
 		private System.Windows.Forms.Label label18;
 		private System.Windows.Forms.Label lblStandCenters;
 		private System.Windows.Forms.Label label22;
-		private System.Windows.Forms.TextBox tbConcreteStandsNeeded;
+		private System.Windows.Forms.TextBox tbTotalStandsNeeded;
 		private System.Windows.Forms.TextBox tbConcreteStand;
 		private System.Windows.Forms.GroupBox gBMaterialSpacing;
 

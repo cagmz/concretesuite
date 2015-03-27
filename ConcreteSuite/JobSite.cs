@@ -25,12 +25,18 @@ namespace ConcreteSuite
 		private ColumnHeader[] columnHeaders;
 		private List<ListViewItem> concreteItemsList;
 
+		private readonly int DECIMALS_TO_ROUND_TO = 2;
+		private double totalRebarNeeded;
+		private double totalStandsNeeded;
+
 		public JobSite()
 		{
 			site = new List<Concrete>();
 			columnHeaders = new ColumnHeader[CONCRETE_ATTRIBUTES.Length];
 			concreteItemsList = new List<ListViewItem>();
 			setColumnHeaders(CONCRETE_ATTRIBUTES);
+			totalRebarNeeded = 0;
+			totalStandsNeeded = 0;
 		}
 
 		public JobSite(Concrete concreteObj)
@@ -117,15 +123,29 @@ namespace ConcreteSuite
 
 		public void updateRebarNeeded(double spacing)
 		{
+			totalRebarNeeded = 0;
 			foreach (Concrete concrete in site)
+			{
 				concrete.setRebarNeeded(concrete.getSquareFeet(), spacing);
+				totalRebarNeeded += concrete.getRebarNeeded();
+			}
+			totalRebarNeeded = Math.Round(totalRebarNeeded, DECIMALS_TO_ROUND_TO);
 		}
 
 		public void updateStandsNeeded(double spacing)
 		{
+			totalStandsNeeded = 0;
 			foreach (Concrete concrete in site)
+			{
 				concrete.setStandsNeeded(concrete.getSquareFeet(), spacing);
+				totalStandsNeeded += concrete.getStandsNeeded();
+			}
+			totalStandsNeeded = Math.Round(totalStandsNeeded, DECIMALS_TO_ROUND_TO);
 		}
+
+		public double getStandsNeeded() { return totalStandsNeeded; }
+
+		public double getRebarNeeded() { return totalRebarNeeded; }
 
 		public List<Concrete> getList() { return this.site; }
 
